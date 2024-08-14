@@ -20,12 +20,21 @@ public class TaskService {
     public List<Task> findAll() {
         return taskRepository.findAll();
     }
+    public List<Task> findByCategoryId(Long categoryId) {
 
-    public void deleteById(Long id) {
-        taskRepository.deleteById(id);
+        // Proceed with deletion if ID is not 2
+        return taskRepository.findByCategoryId(categoryId);
     }
 
+    public void deleteById(Long id) {
+
+            // Proceed with deletion if ID is not 2
+            taskRepository.deleteById(id);
+    }
+
+
     public Task findById(Long id) {
+
         return taskRepository.findById(id).orElse(null);
     }
 }
