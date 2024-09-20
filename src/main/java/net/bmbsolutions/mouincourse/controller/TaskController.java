@@ -35,5 +35,11 @@ public class TaskController {
         task.setId(id);
         return taskService.save(task);
     }
+    @GetMapping("/category/{categoryId}")
+    public List<Task> getTaskByCategory(@PathVariable Long categoryId) {
+        return taskService.findByCategoryId(categoryId);
+
+
+    }
 
 }
